@@ -1,0 +1,7 @@
+backend_homepage:
+    path:     /
+    defaults: { _controller: BackendBundle:Default:index }
+backend_fournisseur:
+    resource: "@BackendBundle/Resources/config/routing/fournisseur.yml"
+    prefix:   /f
+
