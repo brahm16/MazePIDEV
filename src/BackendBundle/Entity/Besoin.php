@@ -36,16 +36,15 @@ class Besoin
     private $date;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="entrepot", type="string", length=255)
-     */
+     * @ORM\ManyToOne(targetEntity="Entrepot")
+     * @ORM\JoinColumn(name="entrepot_id", referencedColumnName="id")
+     * */
     private $entrepot;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="echeance", type="date")
+     * @ORM\Column(name="echeance", type="string", length=255)
      */
     private $echeance;
 
@@ -128,11 +127,10 @@ class Besoin
 
         return $this;
     }
-
     /**
      * Get entrepot
      *
-     * @return string
+     * @return Entrepot
      */
     public function getEntrepot()
     {
@@ -142,7 +140,7 @@ class Besoin
     /**
      * Set echeance
      *
-     * @param \DateTime $echeance
+     * @param string $echeance
      *
      * @return Besoin
      */
@@ -156,7 +154,7 @@ class Besoin
     /**
      * Get echeance
      *
-     * @return \DateTime
+     * @return string
      */
     public function getEcheance()
     {

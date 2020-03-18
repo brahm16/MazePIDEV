@@ -12,8 +12,10 @@ parameters:
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
+    templating:
+        engines: ['twig']
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
         strict_requirements: ~
@@ -71,3 +73,11 @@ swiftmailer:
 sensio_framework_extra:
    router:
         annotations: false
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: BackendBundle\Entity\User
+    from_email:
+        address: "brahimhm470@gmail.com"
+        sender_name: "brahim"

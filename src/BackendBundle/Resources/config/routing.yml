@@ -4,4 +4,10 @@ backend_homepage:
 backend_fournisseur:
     resource: "@BackendBundle/Resources/config/routing/fournisseur.yml"
     prefix:   /f
+backend_besoin_createOne:
+    path: /besoin/create/1
+    defaults: { _controller: BackendBundle:Besoin:createOne }
+add_besoin:
+    path: /besoin/add
+    defaults: { _controller: BackendBundle:Besoin:addBesoin }
 
